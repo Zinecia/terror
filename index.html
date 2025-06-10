@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title> Movies</title>
+    <title>Movies</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
@@ -30,55 +30,68 @@
     <div id="sidebarOverlay" class="fixed inset-0 bg-black bg-opacity-50 z-40 hidden" onclick="toggleSidebar(false)"></div>
 
     <!-- Sidebar Menu -->
-    <aside id="sidebar" class="fixed top-0 left-0 w-64 h-full bg-gray-900 z-50 transform -translate-x-full transition-transform duration-300">
-      <div class="flex justify-between items-center p-4 border-b border-gray-700">
-        <h2 class="text-lg font-semibold">Menú</h2>
-        <button onclick="toggleSidebar(false)" class="text-white text-xl">
-          ×
-        </button>
-      </div>
-      <nav class="flex flex-col space-y-4 p-4">
-        <a href="https://zinecia.github.io/Home" class="hover:text-blue-400">Regresar</a>
-        <a href="https://zinecia.github.io/Buscador/" class="hover:text-blue-400">Buscar</a>
-        <a href="https://zinecia.github.io/Movie" class="hover:text-blue-400">Películas</a>
-        <a href="https://zinecia.github.io/Favoritos/" class="hover:text-blue-400">Favoritos</a>
-        <a href="https://cuentaappcreator.github.io/streaming/" class="hover:text-blue-400">Streaming</a>
-      </nav>
-    </aside>
+   <!-- Sidebar Menu -->
+<aside id="sidebar" class="fixed top-0 left-0 w-64 h-full bg-gray-900 z-50 transform -translate-x-full transition-transform duration-300">
+  <div class="flex justify-between items-center p-4 border-b border-gray-700">
+    <h2 class="text-lg font-semibold">Menú</h2>
+    <button onclick="toggleSidebar(false)" class="text-white text-xl">
+      ×
+    </button>
+  </div>
+  <nav class="flex flex-col space-y-4 p-4 flex-grow">
+    <a href="https://zinecia.github.io/Home" class="hover:text-blue-400">Regresar</a>
+    <a href="https://zinecia.github.io/Buscador/" class="hover:text-blue-400">Buscar</a>
+    <a href="https://zinecia.github.io/Movie" class="hover:text-blue-400">Películas</a>
+    <a href="https://zinecia.github.io/Favoritos/" class="hover:text-blue-400">Favoritos</a>
+    <a href="https://cuentaappcreator.github.io/streaming/" class="hover:text-blue-400">Streaming</a>
+  </nav>
+
+  <!-- Botón para cerrar menú al final -->
+  <div class="p-4 border-t border-gray-700">
+    <button
+      onclick="toggleSidebar(false)"
+      class="w-full bg-blue-700 hover:bg-blue-800 text-white font-semibold py-2 rounded"
+      aria-label="Cerrar menú"
+    >
+      Cerrar menú
+    </button>
+  </div>
+</aside>
+
 
     <!-- Header -->
     <header class="fixed top-0 left-0 w-full z-50 flex items-center justify-between px-3 py-2 bg-black">
 
-  <!-- Botón del menú -->
-  <button aria-label="Menu" class="text-white text-2xl" onclick="toggleSidebar(true)">
-    <i class="fas fa-bars"></i>
-  </button>
+      <!-- Botón del menú -->
+      <button aria-label="Menu" class="text-white text-2xl" onclick="toggleSidebar(true)">
+        <i class="fas fa-bars"></i>
+      </button>
 
-  <!-- Logo con enlace -->
-  <a href="https://zinecia.github.io/Home" class="block w-28 sm:w-32">
-    <img
-      src="LOGO.JPNG" 
-      alt="Mi logo"
-      class="w-full h-auto object-contain"
-    />
-  </a>
+      <!-- Logo con enlace -->
+      <a href="https://zinecia.github.io/Home" class="block w-28 sm:w-32">
+        <img
+          src="LOGO.JPNG" 
+          alt="Mi logo"
+          class="w-full h-auto object-contain"
+        />
+      </a>
 
-  <!-- Botón de búsqueda -->
-  <a href="https://zinecia.github.io/Buscador/r"><button aria-label="Search" class="text-white text-2xl">
-    <i class="fas fa-search"></i>
-  </button></a>
-</header>
-
+      <!-- Botón de búsqueda -->
+      <a href="https://zinecia.github.io/Buscador/"><button aria-label="Search" class="text-white text-2xl"> 
+        <i class="fas fa-search"></i>
+      </button></a>
+    </header>
 
     <!-- Main Content -->
     <main class="px-3 pb-6 pt-14">
 
       <div class="grid grid-cols-3 sm:grid-cols-[repeat(auto-fit,_minmax(140px,_1fr))] gap-3 mt-3">
-        
-<!--PEGAR CONTENIDO AQUI ABAJO-->
 
-		
-		
+        <!--PEGAR CONTENIDO AQUI ABAJO-->
+
+
+
+
 
         <!-- Puedes duplicar más pósters aquí con diferentes enlaces -->
       </div>
