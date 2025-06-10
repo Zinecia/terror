@@ -69,11 +69,7 @@
 
       <!-- Logo con enlace -->
       <a href="https://zinecia.github.io/Home" class="block w-28 sm:w-32">
-        <img
-          src="LOGO.JPNG" 
-          alt="Mi logo"
-          class="w-full h-auto object-contain"
-        />
+      <h1>TERROR</h1>
       </a>
 
       <!-- Botón de búsqueda -->
@@ -129,6 +125,56 @@
           overlay.classList.add('hidden');
         }
       }
+
+        document.addEventListener("DOMContentLoaded", function () {
+  function limpiarTextoRoto(texto) {
+    try {
+      let limpio = decodeURIComponent(escape(texto));
+      limpio = limpio.replace(/[^a-zA-Z0-9áéíóúüñÁÉÍÓÚÜÑ¡!¿?.,:;()\[\]{}<>«»"'°\-\s]/g, "");
+      return limpio;
+    } catch (e) {
+      return texto;
+    }
+  }
+
+  function limpiarNodo(node) {
+    // Limpiar texto de nodos de texto
+    if (node.nodeType === 3) {
+      node.textContent = limpiarTextoRoto(node.textContent);
+    }
+
+    // Limpiar atributos de elementos HTML
+    if (node.nodeType === 1) {
+      const atributos = ["alt", "title", "placeholder", "aria-label"];
+      atributos.forEach(attr => {
+        if (node.hasAttribute(attr)) {
+          node.setAttribute(attr, limpiarTextoRoto(node.getAttribute(attr)));
+        }
+      });
+    }
+
+    // Recursividad para limpiar todo
+    node.childNodes.forEach(hijo => limpiarNodo(hijo));
+  }
+
+  // Limpieza inicial
+  limpiarNodo(document.body);
+
+  // Observador para cambios futuros (dinámicos)
+  const observer = new MutationObserver(mutations => {
+    mutations.forEach(mutation => {
+      mutation.addedNodes.forEach(nodo => {
+        limpiarNodo(nodo);
+      });
+    });
+  });
+
+  observer.observe(document.body, {
+    childList: true,
+    subtree: true,
+    characterData: true
+  });
+});
     </script>
   </body>
 </html>
